@@ -23,6 +23,7 @@ public class LoginTests {
     @AfterClass
     public void tearDown() { common.closeApplication(); }
 
+
     @Test(dataProvider = "valid users", dataProviderClass = com.qualityhouse.course.ait.c_data_driven_testing.testdata.LoginTestData.class)
     public void tcLoginWithValidCredentials(User user) {
         loginPage.open();
@@ -33,13 +34,22 @@ public class LoginTests {
         common.logout();
     }
 
-    @Test(dataProvider = "invalid users", dataProviderClass = com.qualityhouse.course.ait.c_data_driven_testing.testdata.LoginTestData.class)
+    @Test(dataProvider = "invalid credentials", dataProviderClass = com.qualityhouse.course.ait.c_data_driven_testing.testdata.LoginTestData.class)
     public void tcLoginWithInvalidCredentials(User user) {
+        // todo: Exercise no. 1 - login 3 times with username Student8 by using wrong password; check for warning message
+
+        // Solution:
+
+
         loginPage.open();
         loginPage.populateUsername(user.getUsername());
         loginPage.populatePassword(user.getPassword());
         loginPage.login();
-        Assert.assertTrue(Utils.isPresent(driver, common.menuLogin), "Login menu is not available.");
+        if (user.getPassword().equals("last_attempt")) {
+            Assert.assertTrue(Utils.isPresent(driver, common.menuLogin), "Login menu is not available.");
+        } else {
+            Assert.assertTrue(Utils.isPresent(driver, loginPage.loginFormTitle), "Login form is not displayed.");
+        }
     }
 
 }

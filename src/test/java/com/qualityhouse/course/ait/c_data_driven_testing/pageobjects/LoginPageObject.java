@@ -17,6 +17,8 @@ public class LoginPageObject {
 
     public String loginPageURL = "?page=login";
 
+    public By loginFormTitle = By.xpath("//*[@id='main-big-col']/div[1]");
+
     public By txtUsername = By.id("username");
 
     // todo: Exercise no. 1.a - implement correct selector for the password field

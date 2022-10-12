@@ -8,7 +8,7 @@ import java.util.List;
 
 public class EditProfileTestData {
 
-    @DataProvider(name = "valid users")
+    @DataProvider(name = "valid user profiles")
     public static Object[][] validUsersDP() {
         return new Object[][] {
                 new Object[] { new User("student1", "stpass1", "Student One", "student1@example.com", "+111", "Student Str. 1") },
@@ -19,6 +19,14 @@ public class EditProfileTestData {
         };
     }
 
-    // todo: Exercise - define list of invalid user profile details
-
+    // todo: Exercise 4a - define list of invalid user profile details
+    @DataProvider(name = "invalid user profiles")
+    public static Object[][] invalidUsersDP() {
+        return new Object[][] {
+                new Object[] { new User("student1", "stpass1", "", "student1@example.com", "+111", "Student Str. 1") },
+                new Object[] { new User("student2", "stpass2", "Student Two", "", "+222", "Student Str. 2") },
+                new Object[] { new User("student3", "stpass3", "Student Three", "student3@example.com", "", "Student Str. 3") },
+                new Object[] { new User("student4", "stpass4", "Student Four", "student4@example.com", "+444", "") },
+        };
+    }
 }

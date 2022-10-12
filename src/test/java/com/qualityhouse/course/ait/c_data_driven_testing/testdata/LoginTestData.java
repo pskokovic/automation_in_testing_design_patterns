@@ -6,7 +6,6 @@ import com.qualityhouse.course.ait.c_data_driven_testing.support.User;
 import org.testng.annotations.DataProvider;
 
 public class LoginTestData {
-
     @DataProvider(name = "valid users")
     public static Object[][] validUsersDP() {
         return new Object[][] {
@@ -18,12 +17,12 @@ public class LoginTestData {
         };
     }
 
-    @DataProvider(name = "invalid users")
+    @DataProvider(name = "invalid credentials")
     public static Object[][] invalidUsersDP() {
         return new Object[][] {
-                new Object[] { new User("","some password") },
-                new Object[] { new User("student2","") },
-                new Object[] { new User("student3","wrong") }
+                new Object[] { new User("student8","wrong password") },
+                new Object[] { new User("student8","password wrong") },
+                new Object[] { new User("student8","last_attempt") }
         };
     }
 
