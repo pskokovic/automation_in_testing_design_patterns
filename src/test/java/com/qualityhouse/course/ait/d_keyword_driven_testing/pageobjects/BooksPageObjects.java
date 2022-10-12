@@ -1,18 +1,17 @@
 package com.qualityhouse.course.ait.d_keyword_driven_testing.pageobjects;
 
 import com.qualityhouse.course.ait.d_keyword_driven_testing.support.Utils;
-import com.qualityhouse.course.ait.d_keyword_driven_testing.testdata.BooksTestData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class BooksPageObject {
+public class BooksPageObjects {
 
     private WebDriver driver;
 
-    public BooksPageObject(WebDriver webDriver) {
+    public BooksPageObjects(WebDriver webDriver) {
         driver = webDriver;
     }
 
@@ -20,49 +19,38 @@ public class BooksPageObject {
 
     /* list of page components */
 
-    public String booksPageURL = "?page=books";
+    private String booksPageURL = "?page=books";
 
-    public String booksCategoryURL(String category) { return "&category=" + BooksTestData.getBooksCategoryURLParameter(category); }
+    private By listOfBooksInCategory = By.cssSelector("#product-list .item");
 
-    public By listOfBooksInCategory = By.cssSelector("#product-list .item");
+    private By lblBookTitle = By.cssSelector("#product-list .item b");
 
-    public By lblBookTitle = By.cssSelector("#product-list .item b");
+    private By lblBookPrice = By.cssSelector("#product-list .item .buy-info-b span");
 
-    public By lblBookPrice = By.cssSelector("#product-list .item .buy-info-b span");
+    private By lblBookDetailsPrice = By.cssSelector("#product-details > div > div.price");
 
     // search for book(s) fields
 
-    public By txtAuthor = By.name("Author");
+    private By txtAuthor = By.name("Author");
 
-    public By txtTitle = By.name("Title");
+    private By txtTitle = By.name("Title");
 
-    public By txtPublisher = By.name("Publisher");
+    private By txtPublisher = By.name("Publisher");
 
-    public By txtISBN = By.name("ISBN");
+    private By txtISBN = By.name("ISBN");
 
-    public By btnSearchSubmit = By.cssSelector("input[type='submit']");
+    private By btnSearchSubmit = By.cssSelector("input[type='submit']");
 
 
     /* list of page actions */
 
     public void openBooks() {
-        Utils.waitForClickableElement(driver, common.menuBooks).click();
-    }
-
-    public void openBooksCategory(String category) {
-        driver.get(common.applicationURL + booksPageURL + booksCategoryURL(category));
-    }
-
-    public List<WebElement> booksInCategory(String category) {
-        return driver.findElements(listOfBooksInCategory);
+        Utils.waitForClickableElement(driver, common.getMenuBooks()).click();
     }
 
     public List<WebElement> listOfBooks() {
         return driver.findElements(listOfBooksInCategory);
     }
-
-
-    /* list of keywords */
 
     public void clearSearchForm() {
         driver.findElement(txtTitle).clear();
@@ -95,23 +83,8 @@ public class BooksPageObject {
         driver.findElement(txtISBN).sendKeys(isbn);
     }
 
-    public void searchForBook(String title) {
-        clearSearchForm();
-        populateSearchISBN(BooksTestData.getBookISBN(title));
-        search();
-    }
-
-    public void searchForBook(String author, String title, String publisher, String isbn) {
-        // todo: Exercise no. 1 - implement keyword that searches for a book with given details
-        populateSearchAuthor(author);
-        populateSearchTitle(title);
-        populateSearchPublisher(publisher);
-        populateSearchISBN(isbn);
-        search();
-    }
-
     // returns: boolean - true if book is listed on the page
-    public boolean isBookInList(String title) {
+    public boolean isBookListed(String title) {
         List<WebElement> listedBooks = listOfBooks();
 
         boolean bookFound = false;
@@ -130,12 +103,16 @@ public class BooksPageObject {
 
         for (WebElement b : listedBooks) {
             if (b.findElement(lblBookTitle).getText().equals(title)) {
-                bookFound = b;
+                bookFound = b.findElement(By.cssSelector("b"));
                 bookFound.click();
             }
         }
 
         return bookFound;
+    }
+
+    public String getBookDetailsPrice() {
+        return driver.findElement(lblBookDetailsPrice).getText().split(" ")[0];
     }
 
 }

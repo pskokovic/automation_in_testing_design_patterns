@@ -1,53 +1,59 @@
 package com.qualityhouse.course.ait.d_keyword_driven_testing.pageobjects;
 
+import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+@Getter
 public class CommonPageObjects {
 
     private WebDriver driver;
 
-    public CommonPageObjects (WebDriver driver) { this.driver = driver; }
+    public CommonPageObjects (WebDriver driver) {
+        this.driver = driver;
+    }
 
     /* list of page components */
 
-    public String applicationURL = "http://acme.qualityhouse.com/build3/index.php";
+    private String applicationURL = "http://acme.qualityhouse.com/build3/index.php";
 
-    public By applicationLogo = By.cssSelector("a img[src='./application/i/logo.png']");
+    private By applicationLogo = By.cssSelector("a img[src='./application/i/logo.png']");
 
     // main application menu
-    public By menuHome = By.cssSelector("#main-menu a[href='index.php?page=home']");
+    private By menuHome = By.cssSelector("#main-menu a[href='index.php?page=home']");
 
-    public By menuBooks = By.cssSelector("#main-menu a[href='index.php?page=books']");
+    private By menuBooks = By.cssSelector("#main-menu a[href='index.php?page=books']");
 
-    public By menuCDs = By.cssSelector("#main-menu a[href='index.php?page=cds']");
+    private By menuCDs = By.cssSelector("#main-menu a[href='index.php?page=cds']");
 
-    public By menuBasket = By.cssSelector("#main-menu a[href='index.php?page=basket']");
+    private By menuBasket = By.cssSelector("#main-menu a[href='index.php?page=basket']");
 
-    public By menuRegister = By.cssSelector("#main-menu a[href='index.php?page=register']");
+    private By menuRegister = By.cssSelector("#main-menu a[href='index.php?page=register']");
 
     public By menuLogin = By.cssSelector("#main-menu a[href='index.php?page=login']");
 
-    public By menuEditProfile = By.cssSelector("#main-menu a[href='index.php?page=edit-profile']");
+    private By menuEditProfile = By.cssSelector("#main-menu a[href='index.php?page=edit-profile']");
 
-    public By menuLogout = By.cssSelector("#main-menu a[href='index.php?page=logout']");
+    private By menuLogout = By.cssSelector("#main-menu a[href='index.php?page=logout']");
 
-    public By menuBasketImage = By.cssSelector("a[href='index.php?page=basket'] [src='./application/i/basket.png']");
+    private By menuBasketImage = By.cssSelector("a[href='index.php?page=basket'] [src='./application/i/basket.png']");
 
     // common page components
-    public By pageTitle = By.cssSelector("h3");
+    private By pageTitle = By.cssSelector("h3");
 
     // logout page components
-    public By btnLogout = By.cssSelector("a.big-btn[href='index.php?ses_logout=1']");
+    private By btnLogout = By.cssSelector("a.big-btn[href='index.php?ses_logout=1']");
 
 
     /* list of page actions */
 
-    public void openApplication() {
+    public void openApp() {
         driver.get(applicationURL);
     }
 
-    public void closeApplication() { driver.close(); }
+    public void closeApp() {
+        driver.close();
+    }
 
     public void logout() {
         driver.findElement(menuLogout).click();
