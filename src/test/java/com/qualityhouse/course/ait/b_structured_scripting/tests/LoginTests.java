@@ -62,12 +62,51 @@ public class LoginTests {
     public void tcTooManyUnsuccessfulLogins() {
         // todo: Exercise no. 1 - login 3 times with username student1 by using wrong password; check for warning message
 
+        // Solution:
+
+
+        LoginLib.navigateToLoginPage(driver);
+
+        LoginLib.loginAsUser(driver, "student1", "wrong");
+
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id='main-big-col']/div[1]")).getText().contains("Please use your username and password to login."), "User is not logged out.");
+
+        LoginLib.loginAsUser(driver, "student1", "gnorw");
+
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id='main-big-col']/div[1]")).getText().contains("Please use your username and password to login."), "User is not logged out.");
+
+        LoginLib.loginAsUser(driver, "student1", "");
+
+        Assert.assertTrue(driver.findElement(By.className("err")).getText().contains("Too many unsuccessful login attempts!"), "User is not blocked for another login attempt.");
    }
 
     @Test
     public void tcLoginWithSeveralUsers() {
         // todo: Exercise no. 2 - perform login (and logout) of three users (student1, student2, student3), sequentially
 
+        // Solution:
+
+
+        // login as the first user
+        LoginLib.navigateToLoginPage(driver);
+
+        LoginLib.loginAsUser(driver, "student1", "stpass1");
+
+        CommonLib.logoutFromApp(driver);
+
+        // login as the second user
+        LoginLib.navigateToLoginPage(driver);
+
+        LoginLib.loginAsUser(driver, "student2", "stpass2");
+
+        CommonLib.logoutFromApp(driver);
+
+        // login as the third user
+        LoginLib.navigateToLoginPage(driver);
+
+        LoginLib.loginAsUser(driver, "student3", "stpass3");
+
+        CommonLib.logoutFromApp(driver);
     }
 
 }
