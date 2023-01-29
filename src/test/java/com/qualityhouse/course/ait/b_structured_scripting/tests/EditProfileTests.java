@@ -26,7 +26,7 @@ public class EditProfileTests {
 
     @Test
     public void editProfileUser1() {
-        // todo: Exercise no. B-2.1b - modify profile details of Student1
+        // todo: Exercise B-2.1b - modify profile details of Student1
         // note: in order to complete this test implement methods in EditProfile library
 
         // Solution:

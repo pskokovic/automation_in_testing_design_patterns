@@ -60,7 +60,7 @@ public class LoginTests {
 
     @Test
     public void tcTooManyUnsuccessfulLogins() {
-        // todo: Exercise no. B-1.1 - login 3 times with username student1 by using wrong password; check for warning message
+        // todo: Exercise B-1.1 - login 3 times with username student1 by using wrong password; check for warning message
 
         // Solution:
 
@@ -68,7 +68,7 @@ public class LoginTests {
 
     @Test
     public void tcLoginWithSeveralUsers() {
-        // todo: Exercise no. B-1.2 - perform login (and logout) of three users (student1, student2, student3), sequentially
+        // todo: Exercise B-1.2 - perform login (and logout) of three users (student1, student2, student3), sequentially
 
         // Solution:
 

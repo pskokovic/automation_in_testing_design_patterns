@@ -17,52 +17,20 @@ public class EditProfilePageObject {
     /* list of page components */
     public String editProfilePageURL = "?page=edit-profile";
 
-    // todo: Exercise no. 2.a - list necessary  page components
+    // todo: Exercise C-2.1a - define needed page components
 
     // Solution:
 
 
-    public By txtEmail = By.name("cEmail");
-
-    public By txtName = By.name("cName");
-
-    public By txtPhone = By.name("cPhone");
-
-    public By txtAddress = By.name("cAddress");
-
-    public By btnSubmit = By.cssSelector("input[type='submit'][value='Submit']");
-
-    public By txtMessage = By.cssSelector("body b");
-
-
     /* list of page actions */
+
     public void open() {
         driver.get(common.applicationURL + editProfilePageURL);
     }
 
-    // todo: Exercise no. 2.b - list necessary  page actions
+    // todo: Exercise C-2.1b - implement needed page actions
 
     // Solution:
 
-
-    public void populateEmail(String email) {
-
-    }
-
-    public void populateName(String name) {
-
-    }
-
-    public void populatePhone(String phone) {
-
-    }
-
-    public void populateAddress(String address) {
-
-    }
-
-    public void submitProfile(){
-
-    }
 
 }

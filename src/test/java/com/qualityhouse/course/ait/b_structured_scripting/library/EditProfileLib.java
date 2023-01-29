@@ -10,7 +10,7 @@ public class EditProfileLib {
 
     private final static Logger logger = LogManager.getLogger(EditProfileLib.class);
 
-    // todo: Exercise no. B-2.1a - create methods for handling profile
+    // todo: Exercise B-2.1a - create methods for handling profile
 
     // Solution:
 

@@ -30,7 +30,8 @@ public class EditProfileTests {
 
     @Test(dataProvider = "valid user profiles", dataProviderClass = com.qualityhouse.course.ait.c_data_driven_testing.testdata.EditProfileTestData.class)
     public void tcEditProfileWithValidData(User user) {
-        // todo: Exercise no. C-2.1b - create "main test script" for the valid modification of user's profile
+        // todo: Exercise no. C-2.2b - create "main test script" for the valid modification of user's profile
+        // note: define elements and implement actions for Edit Profile page
         // note: create data provider "valid user profiles"
 
         // Solution:
@@ -39,7 +40,8 @@ public class EditProfileTests {
 
     @Test(dataProvider = "invalid user profiles", dataProviderClass = com.qualityhouse.course.ait.c_data_driven_testing.testdata.EditProfileTestData.class)
     public void tcEditProfileWithInvalidData(User user) {
-        // todo: Exercise no. C-2.2b - create "main test script" for the invalid modification of user's profile; leave mandatory fields empty
+        // todo: Exercise no. C-2.3b - create "main test script" for the invalid modification of user's profile; leave mandatory fields empty
+        // note: define elements and implement actions for Edit Profile page
         // note: create data provider "invalid user profiles"
         // hint: driver.switchTo().alert().dismiss()
 
