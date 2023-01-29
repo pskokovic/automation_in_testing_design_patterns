@@ -43,7 +43,7 @@ public class FindBookTests {
     public void tcVerifyDetailsOfFoundBook() {
         // todo: Exercise D-1.2 - search for a book with title "The miracles of the Nature"
 
-        // Solution
+        // Solution:
 
     }
 
@@ -51,7 +51,7 @@ public class FindBookTests {
     public void tcVerifyBookPrice() {
         // todo: Exercise D-1.3 - develop keyword to easy verify given book price
 
-        // Solution
+        // Solution:
 
     }
 }

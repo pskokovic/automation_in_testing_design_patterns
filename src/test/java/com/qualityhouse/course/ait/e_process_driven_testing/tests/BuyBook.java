@@ -29,18 +29,20 @@ public class BuyBook {
     @Test
     public void tcBuyBook() {
         /*
-         todo: Exercise no. 1 - create a procedure, readable by end users, to buy a book
-                loginSuccessfully();
-                searchForBook();
-                putTheBookInBasket();
-                buyTheBook();
+         todo: Exercise E-1.1 - create a keyword for workflow (sequence of processes) of buying a book
+               sequence example: login -- search for a book -- put the book in basket -- buy the book
         */
+        // note: reuse keywords from d_keyword_driven_testing keywords hierarchy
+
+        // Solution:
+
     }
 
     @Test
-    public void tcBuy3CopiesOfTheBook() {
-        // todo: Exercise no. 2 - create a procedure, readable by end users, to buy several copies of one book
+    public void tcBuy3CopiesOfTheSelectedBook() {
+        // todo: Exercise E-1.2 - extend the keyword created in E-1.1 to allow for buying more than one copy of the same book
 
+        // Solution:
     }
 
 }
