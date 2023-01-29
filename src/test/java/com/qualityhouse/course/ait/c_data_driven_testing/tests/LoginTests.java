@@ -18,17 +18,23 @@ public class LoginTests {
     private CommonPageObjects common = new CommonPageObjects(driver);
 
     @BeforeClass
-    public void setup() { common.openApplication(); }
+    public void setup() {
+        common.openApplication();
+    }
 
     @AfterClass
-    public void tearDown() { common.closeApplication(); }
-
+    public void tearDown() {
+        common.closeApplication();
+    }
 
     @Test(dataProvider = "valid users", dataProviderClass = com.qualityhouse.course.ait.c_data_driven_testing.testdata.LoginTestData.class)
     public void tcLoginWithValidCredentials(User user) {
         loginPage.open();
         loginPage.populateUsername(user.getUsername());
+
+        // note: implement populatePassword method
         loginPage.populatePassword(user.getPassword());
+
         loginPage.login();
         Assert.assertTrue(Utils.isPresent(driver, common.menuLogout), "User is not logged in.");
         common.logout();
@@ -36,7 +42,7 @@ public class LoginTests {
 
     @Test(dataProvider = "invalid credentials", dataProviderClass = com.qualityhouse.course.ait.c_data_driven_testing.testdata.LoginTestData.class)
     public void tcLoginWithInvalidCredentials(User user) {
-        // todo: Exercise no. C-1.1 - login 3 times with username StudentX {X=1..10} by using wrong password; check for warning message
+        // todo: Exercise C-1.2 - login 3 times with username StudentX {X=1..10} by using wrong password; check for warning message
 
         // Solution:
 

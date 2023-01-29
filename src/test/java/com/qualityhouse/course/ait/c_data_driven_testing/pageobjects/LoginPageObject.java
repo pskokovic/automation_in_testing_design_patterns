@@ -21,8 +21,8 @@ public class LoginPageObject {
 
     public By txtUsername = By.id("username");
 
-    // todo: Exercise no. 1.a - implement correct selector for the password field
-    public By txtPassword = By.name("userpass");
+    // todo: Exercise C-1.1a - implement correct selector for the password field
+    public By txtPassword = By.name("");
 
     public By btnLogin = By.name("ses_login");
 
@@ -38,8 +38,9 @@ public class LoginPageObject {
     }
 
     public void populatePassword(String pwd) {
-        // todo: Exercise no. 1.b - implement method for populating the password field
-        driver.findElement(txtPassword).sendKeys(pwd);
+        // todo: Exercise C-1.1b - implement method for populating the password field
+        // note: implement element for the password field
+
     }
 
     public void login() {

@@ -46,27 +46,23 @@ public class EditProfilePageObject {
 
 
     public void populateEmail(String email) {
-        driver.findElement(txtEmail).clear();
-        driver.findElement(txtEmail).sendKeys(email);
+
     }
 
     public void populateName(String name) {
-        driver.findElement(txtName).clear();
-        driver.findElement(txtName).sendKeys(name);
+
     }
 
     public void populatePhone(String phone) {
-        driver.findElement(txtPhone).clear();
-        driver.findElement(txtPhone).sendKeys(phone);
+
     }
 
     public void populateAddress(String address) {
-        driver.findElement(txtAddress).clear();
-        driver.findElement(txtAddress).sendKeys(address);
+
     }
 
     public void submitProfile(){
-        driver.findElement(btnSubmit).click();
+
     }
 
 }
