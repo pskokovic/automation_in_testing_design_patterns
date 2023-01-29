@@ -30,53 +30,21 @@ public class EditProfileTests {
 
     @Test(dataProvider = "valid user profiles", dataProviderClass = com.qualityhouse.course.ait.c_data_driven_testing.testdata.EditProfileTestData.class)
     public void tcEditProfileWithValidData(User user) {
-        // todo: Exercise no. 3 - create "main test script" for the valid modification of user's profile
+        // todo: Exercise no. C-2.1b - create "main test script" for the valid modification of user's profile
+        // note: create data provider "valid user profiles"
 
         // Solution:
 
-
-        loginPage.open();
-        loginPage.populateUsername(user.getUsername());
-        loginPage.populatePassword(user.getPassword());
-        loginPage.login();
-
-        editProfilePage.open();
-        editProfilePage.populateEmail(user.getEmail());
-        editProfilePage.populateName(user.getName());
-        editProfilePage.populatePhone(user.getPhone());
-        editProfilePage.populateAddress(user.getAddress());
-        editProfilePage.submitProfile();
-
-        Assert.assertEquals(driver.findElement(editProfilePage.txtMessage).getText(), "Your profile was updated successfully!");
-        common.logout();
     }
 
     @Test(dataProvider = "invalid user profiles", dataProviderClass = com.qualityhouse.course.ait.c_data_driven_testing.testdata.EditProfileTestData.class)
     public void tcEditProfileWithInvalidData(User user) {
-        // todo: Exercise no. 4.b - create "main test script" for the invalid modification of user's profile; leave mandatory fields empty
+        // todo: Exercise no. C-2.2b - create "main test script" for the invalid modification of user's profile; leave mandatory fields empty
+        // note: create data provider "invalid user profiles"
         // hint: driver.switchTo().alert().dismiss()
 
         // Solution:
 
-
-        loginPage.open();
-        loginPage.populateUsername(user.getUsername());
-        loginPage.populatePassword(user.getPassword());
-        loginPage.login();
-
-        editProfilePage.open();
-        editProfilePage.populateEmail(user.getEmail());
-        editProfilePage.populateName(user.getName());
-        editProfilePage.populatePhone(user.getPhone());
-        editProfilePage.populateAddress(user.getAddress());
-        editProfilePage.submitProfile();
-
-        Alert alert = driver.switchTo().alert();
-        // NOTE: this assertion fails, as the Address seems not to be mandatory, although it should be - have we found a bug? :)
-        Assert.assertTrue(alert.getText().contains("Please fill all required fields!"));
-        alert.dismiss();
-
-        common.logout();
     }
 
 }

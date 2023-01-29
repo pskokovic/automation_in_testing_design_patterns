@@ -8,25 +8,19 @@ import java.util.List;
 
 public class EditProfileTestData {
 
+    // todo: Exercise C-2.1a - populate test data with correct user profile details
     @DataProvider(name = "valid user profiles")
     public static Object[][] validUsersDP() {
         return new Object[][] {
-                new Object[] { new User("student1", "stpass1", "Student One", "student1@example.com", "+111", "Student Str. 1") },
-                new Object[] { new User("student2", "stpass2", "Student Two", "student2@example.com", "+222", "Student Str. 2") },
-                new Object[] { new User("student3", "stpass3", "Student Three", "student3@example.com", "+333", "Student Str. 3") },
-                new Object[] { new User("student4", "stpass4", "Student Four", "student4@example.com", "+444", "Student Str. 4") },
-                new Object[] { new User("student5", "stpass5", "Student Five", "student5@example.com", "+555", "Student Str. 5") }
+
         };
     }
 
-    // todo: Exercise 4a - define list of invalid user profile details
+    // todo: Exercise C-2.2a - populate test data with incorrect user profile details, to provoke the system to handle errors
     @DataProvider(name = "invalid user profiles")
     public static Object[][] invalidUsersDP() {
         return new Object[][] {
-                new Object[] { new User("student1", "stpass1", "", "student1@example.com", "+111", "Student Str. 1") },
-                new Object[] { new User("student2", "stpass2", "Student Two", "", "+222", "Student Str. 2") },
-                new Object[] { new User("student3", "stpass3", "Student Three", "student3@example.com", "", "Student Str. 3") },
-                new Object[] { new User("student4", "stpass4", "Student Four", "student4@example.com", "+444", "") },
+
         };
     }
 }
