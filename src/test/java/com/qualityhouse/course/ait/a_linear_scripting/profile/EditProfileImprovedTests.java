@@ -63,7 +63,7 @@ public class EditProfileImprovedTests {
 
     @Test
     public void tcVerifyMandatoryFields() {
-        // todo: Exercise no. 2.2 - Verify that mandatory fields (E-mail, Name, Phone) do not accept empty values
+        // todo: Exercise no. A-2.2 - Verify that mandatory fields (E-mail, Name, Phone) do not accept empty values
         // hint: driver.switchTo().alert().dismiss();
         // note: apply Before and After methods
 

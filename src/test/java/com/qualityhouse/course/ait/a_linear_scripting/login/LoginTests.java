@@ -110,7 +110,7 @@ public class LoginTests {
 
     @Test
     public void tcLoginWithSeveralUsers() {
-        // todo: Exercise no. 1.1 - perform login (and logout) of three users (student1, student2, student3), sequentially
+        // todo: Exercise no. A-1.1 - perform login (and logout) of three users (student1, student2, student3), sequentially
 
         // Solution:
 
