@@ -22,18 +22,10 @@ public class BooksKeywords {
     }
 
     public void searchForBook(String author, String title, String publisher, String isbn) {
-        // todo: Exercise 1 - implement keyword that searches for a book with given details
+        // todo: Exercise D-1.1b - implement keyword that searches for a book with given details
 
         // Solution:
 
-
-        BooksPageObjects booksPage = new BooksPageObjects(driver);
-
-        booksPage.populateSearchAuthor(author);
-        booksPage.populateSearchTitle(title);
-        booksPage.populateSearchPublisher(publisher);
-        booksPage.populateSearchISBN(isbn);
-        booksPage.search();
     }
 
     public void showBookDetails(String title) {
@@ -45,7 +37,7 @@ public class BooksKeywords {
     public void bookShouldBeListed(String title) {
         BooksPageObjects booksPage = new BooksPageObjects(driver);
 
-        // one way of hiding Assert from non-technical stakeholders, to increase readability of test script
+        // note: one way of hiding Assert from non-technical stakeholders, to increase readability of test script
         Assert.assertTrue(booksPage.isBookListed(title),"Book is not in the list.");
     }
 

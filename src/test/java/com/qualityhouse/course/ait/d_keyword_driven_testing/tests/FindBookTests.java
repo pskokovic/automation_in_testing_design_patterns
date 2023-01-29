@@ -35,46 +35,23 @@ public class FindBookTests {
 
         books.showBooks();
 
-        // todo: Exercise 1 - implement keyword for book search (check the method for solution)
-        books.searchForBook("", "", "Nature Books Ltd.", "");
+        // todo: Exercise D-1.1b - implement keyword for book search (check the method for solution)
 
-        books.bookShouldBeListed("Autumn Colors");
     }
 
     @Test
     public void tcVerifyDetailsOfFoundBook() {
-        // todo: Exercise no. 2 - search for a book with title "The miracles of the Nature"
+        // todo: Exercise D-1.2 - search for a book with title "The miracles of the Nature"
 
-        // Solution - in this example we didn't use predefined data, to demonstrate how to use very complex data sets:
+        // Solution
 
-
-        Book book = booksData.getMiraclesOfNature();
-
-        common.loginWithValidCredentials();
-
-        books.showBooks();
-
-        books.searchForBookWithTitle(book.getTitle());
-
-        books.bookShouldBeListed(book.getTitle());
     }
 
     @Test
     public void tcVerifyBookPrice() {
-        // todo: Exercise no. 3 - develop keyword to easy verify given book price
+        // todo: Exercise D-1.3 - develop keyword to easy verify given book price
 
-        // Solution - in this example we didn't use predefined data, to demonstrate specification by example approach:
-
-
-        common.loginWithValidCredentials();
-
-        books.showBooks();
-
-        books.searchForBookWithTitle("Become a Mogul");
-
-        books.showBookDetails("Become a Mogul");
-
-        books.bookPriceShouldBe("19.99");
+        // Solution
 
     }
 }
