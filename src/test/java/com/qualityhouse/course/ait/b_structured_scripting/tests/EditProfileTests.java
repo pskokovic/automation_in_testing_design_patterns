@@ -26,19 +26,11 @@ public class EditProfileTests {
 
     @Test
     public void editProfileUser1() {
-        // todo: Exercise no. 3.b - modify profile details of Student1
+        // todo: Exercise no. B-2.1b - modify profile details of Student1
+        // note: in order to complete this test implement methods in EditProfile library
 
         // Solution:
 
 
-        LoginLib.navigateToLoginPage(driver);
-
-        LoginLib.loginAsUser(driver, "student1", "stpass1");
-
-        EditProfileLib.navigateToProfilePage(driver);
-
-        EditProfileLib.updateProfile(driver, "student1_new@example.com", "Student F. One", "+987654321", "Students New Street 1\nStudents New City");
-
-        CommonLib.logoutFromApp(driver);
     }
 }
