@@ -28,7 +28,7 @@ public class LoginTests {
 
         Assert.assertTrue(driver.findElement(By.cssSelector("a[href='index.php?page=login']")).isDisplayed(), "User is not logged out.");
 
-        driver.close();
+        driver.quit();
     }
 
     @Test
@@ -51,7 +51,7 @@ public class LoginTests {
 
         Assert.assertTrue(driver.findElement(By.cssSelector("a[href='index.php?page=login']")).isDisplayed(), "User is not logged out.");
 
-        driver.close();
+        driver.quit();
     }
 
     @Test
@@ -74,7 +74,7 @@ public class LoginTests {
 
         Assert.assertTrue(driver.findElement(By.cssSelector("a[href='index.php?page=login']")).isDisplayed(), "User is not logged out.");
 
-        driver.close();
+        driver.quit();
     }
 
     @Test
@@ -105,7 +105,7 @@ public class LoginTests {
 
         Assert.assertTrue(driver.findElement(By.cssSelector("b.err")).isDisplayed(), "Warning message is not displayed.");
 
-        driver.close();
+        driver.quit();
     }
 
     @Test
