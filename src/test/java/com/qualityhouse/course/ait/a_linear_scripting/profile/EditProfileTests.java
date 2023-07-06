@@ -1,5 +1,6 @@
 package com.qualityhouse.course.ait.a_linear_scripting.profile;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +12,7 @@ public class EditProfileTests {
 
     @Test
     public void editUserProfile1() {
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = WebDriverManager.chromedriver().create();
 
         driver.get("http://acme.qualityhouse.com/build3/index.php");
 
