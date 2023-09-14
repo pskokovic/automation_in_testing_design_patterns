@@ -3,13 +3,13 @@ package com.qualityhouse.course.ait.e_process_driven_testing.tests;
 import com.qualityhouse.course.ait.e_process_driven_testing.pageobjects.BooksPageObject;
 import com.qualityhouse.course.ait.e_process_driven_testing.pageobjects.CommonPageObjects;
 import com.qualityhouse.course.ait.e_process_driven_testing.pageobjects.LoginPageObject;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
-public class BuyBook {
+public class BuyBookTests {
 
-    private WebDriver driver = new ChromeDriver();
+    private WebDriver driver = WebDriverManager.chromedriver().create();
 
     private LoginPageObject loginPage = new LoginPageObject(driver);
 

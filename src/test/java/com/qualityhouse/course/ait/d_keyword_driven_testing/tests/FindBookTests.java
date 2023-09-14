@@ -4,13 +4,13 @@ import com.qualityhouse.course.ait.d_keyword_driven_testing.keywords.BooksKeywor
 import com.qualityhouse.course.ait.d_keyword_driven_testing.keywords.CommonAppKeywords;
 import com.qualityhouse.course.ait.d_keyword_driven_testing.testdata.BooksData;
 import com.qualityhouse.course.ait.d_keyword_driven_testing.testdata.models.Book;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
 public class FindBookTests {
 
-    private WebDriver driver = new ChromeDriver();
+    private WebDriver driver = WebDriverManager.chromedriver().create();
 
     private CommonAppKeywords common = new CommonAppKeywords(driver);
 

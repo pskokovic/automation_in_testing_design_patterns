@@ -4,14 +4,14 @@ import com.qualityhouse.course.ait.c_data_driven_testing.pageobjects.CommonPageO
 import com.qualityhouse.course.ait.c_data_driven_testing.pageobjects.LoginPageObject;
 import com.qualityhouse.course.ait.c_data_driven_testing.support.User;
 import com.qualityhouse.course.ait.c_data_driven_testing.support.Utils;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class LoginTests {
 
-    private WebDriver driver = new ChromeDriver();
+    private WebDriver driver = WebDriverManager.chromedriver().create();
 
     private LoginPageObject loginPage = new LoginPageObject(driver);
 

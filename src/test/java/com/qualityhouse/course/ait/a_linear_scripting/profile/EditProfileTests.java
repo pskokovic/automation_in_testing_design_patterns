@@ -1,10 +1,8 @@
 package com.qualityhouse.course.ait.a_linear_scripting.profile;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -50,7 +48,7 @@ public class EditProfileTests {
 
         driver.findElement(By.cssSelector("a.big-btn[href='index.php?ses_logout=1']")).click();
 
-        driver.close();
+        driver.quit();
     }
 
     @Test

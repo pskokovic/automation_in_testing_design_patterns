@@ -52,7 +52,7 @@ public class CommonPageObjects {
     }
 
     public void closeApp() {
-        driver.close();
+        driver.quit();
     }
 
     public void logout() {
