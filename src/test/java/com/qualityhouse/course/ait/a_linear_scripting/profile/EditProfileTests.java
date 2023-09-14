@@ -49,7 +49,7 @@ public class EditProfileTests {
 
         driver.findElement(By.cssSelector("a.big-btn[href='index.php?ses_logout=1']")).click();
 
-        driver.close();
+        driver.quit();
     }
 
     @Test
@@ -149,6 +149,6 @@ public class EditProfileTests {
         Assert.assertTrue(alert.getText().contains("Please fill all required fields!"));
         alert.dismiss();
 
-        driver.close();
+        driver.quit();
     }
 }

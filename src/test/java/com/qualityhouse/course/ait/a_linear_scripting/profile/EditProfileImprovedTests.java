@@ -35,7 +35,7 @@ public class EditProfileImprovedTests {
 
         driver.findElement(By.cssSelector("a.big-btn[href='index.php?ses_logout=1']")).click();
 
-        driver.close();
+        driver.quit();
     }
 
     @Test

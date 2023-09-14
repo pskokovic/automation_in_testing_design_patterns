@@ -47,7 +47,7 @@ public class CommonPageObjects {
         driver.get(applicationURL);
     }
 
-    public void closeApplication() { driver.close(); }
+    public void closeApplication() { driver.quit(); }
 
     public void logout() {
         driver.findElement(menuLogout).click();
