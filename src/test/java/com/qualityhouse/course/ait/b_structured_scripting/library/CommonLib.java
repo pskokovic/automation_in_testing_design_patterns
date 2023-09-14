@@ -1,10 +1,10 @@
 package com.qualityhouse.course.ait.b_structured_scripting.library;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class CommonLib {
 
@@ -16,7 +16,7 @@ public class CommonLib {
     public static  WebDriver openBrowser() {
         logger.info("open Chrome browser");
 
-        return new ChromeDriver();
+        return WebDriverManager.chromedriver().create();
     }
 
     // navigate to application's home url

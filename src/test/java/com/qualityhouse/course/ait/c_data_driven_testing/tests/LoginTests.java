@@ -4,14 +4,14 @@ import com.qualityhouse.course.ait.c_data_driven_testing.pageobjects.CommonPageO
 import com.qualityhouse.course.ait.c_data_driven_testing.pageobjects.LoginPageObject;
 import com.qualityhouse.course.ait.c_data_driven_testing.support.User;
 import com.qualityhouse.course.ait.c_data_driven_testing.support.Utils;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class LoginTests {
 
-    private WebDriver driver = new ChromeDriver();
+    private WebDriver driver = WebDriverManager.chromedriver().create();
 
     private LoginPageObject loginPage = new LoginPageObject(driver);
 
@@ -23,8 +23,8 @@ public class LoginTests {
     @AfterClass
     public void tearDown() { common.closeApplication(); }
 
-
-    @Test(dataProvider = "valid users", dataProviderClass = com.qualityhouse.course.ait.c_data_driven_testing.testdata.LoginTestData.class)
+    // note: priority parameter is introduced to avoid situation in which login is blocked for 30 seconds
+    @Test(priority = 1, dataProvider = "valid users", dataProviderClass = com.qualityhouse.course.ait.c_data_driven_testing.testdata.LoginTestData.class)
     public void tcLoginWithValidCredentials(User user) {
         loginPage.open();
         loginPage.populateUsername(user.getUsername());
@@ -34,7 +34,7 @@ public class LoginTests {
         common.logout();
     }
 
-    @Test(dataProvider = "invalid credentials", dataProviderClass = com.qualityhouse.course.ait.c_data_driven_testing.testdata.LoginTestData.class)
+    @Test(priority = 2, dataProvider = "invalid credentials", dataProviderClass = com.qualityhouse.course.ait.c_data_driven_testing.testdata.LoginTestData.class)
     public void tcLoginWithInvalidCredentials(User user) {
         // todo: Exercise no. 1 - login 3 times with username Student8 by using wrong password; check for warning message
 

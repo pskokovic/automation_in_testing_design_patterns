@@ -1,8 +1,8 @@
 package com.qualityhouse.course.ait.a_linear_scripting.login;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -14,7 +14,7 @@ public class LoginImprovedTests {
 
     @BeforeMethod
     public void setup() {
-        driver = new ChromeDriver();
+        driver = WebDriverManager.chromedriver().create();
 
         driver.get("http://acme.qualityhouse.com/build3/index.php");
     }
