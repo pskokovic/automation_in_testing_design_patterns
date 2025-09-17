@@ -35,7 +35,6 @@ public class FindBookTests {
 
         books.showBooks();
 
-        // todo: Exercise 1 - implement keyword for book search (check the method for solution)
         books.searchForBook("", "", "Nature Books Ltd.", "");
 
         books.bookShouldBeListed("Autumn Colors");
